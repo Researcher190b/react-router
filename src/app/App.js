@@ -1,10 +1,11 @@
 import NavBar from "./components/navBar";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Dashboard from "./components/dashboard";
 import Login from "./components/login";
 import Posts from "./components/posts";
 import Home from "./components/home";
 import Stats from "./components/stats";
+import NotFound from "./components/not-found";
 
 function App() {
   return (
@@ -16,11 +17,10 @@ function App() {
         <Route path="/dashboard/stats" component={Stats} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
-        <Route
-          path="/posts/:postsId?/:display?"
-          component={Posts}
-          // render={(props) => <Posts {...props} />}
-        />
+        <Route path="/posts/:postsId?" component={Posts} />
+        <Route pach="/404" component={NotFound} />
+        <Redirect from="/admin" to="/dashboard" />
+        <Redirect to="/404" />
       </Switch>
     </div>
   );
