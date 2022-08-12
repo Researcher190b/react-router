@@ -18,9 +18,9 @@ function App() {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/posts/:postsId?" component={Posts} />
-        <Route pach="/404" component={NotFound} />
         <Redirect from="/admin" to="/dashboard" />
         <Redirect to="/404" />
+        <Route pach="/404" component={NotFound} />
       </Switch>
     </div>
   );
